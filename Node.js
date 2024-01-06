@@ -29,7 +29,7 @@ app.post('/signup', (req, res) => {
     fs.writeFileSync('accounts.json', JSON.stringify(accounts, null, 2));
 
     // Redirect to a success page after signup
-    res.redirect('/signup-success.html');
+    res.redirect('signup.html');
 });
 
 // Route for user login
@@ -39,7 +39,7 @@ app.post('/login', (req, res) => {
 
     if (user) {
         // Redirect to home.html after successful login
-        res.redirect('/home.html');
+        res.redirect('home.html');
     } else {
         res.status(401).send('Invalid credentials');
     }
